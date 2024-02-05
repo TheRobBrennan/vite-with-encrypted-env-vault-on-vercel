@@ -69,3 +69,5 @@ Auto-detected Project Settings (Vite):
 ```
 
 After successfully deploying to Vercel, my project is available at [https://vite-with-encrypted-env-vault-on-vercel.vercel.app](https://vite-with-encrypted-env-vault-on-vercel.vercel.app).
+
+Once your app is deployed to Vercel, it will say `Hello, undefined.` because it doesn't have access to the `VITE_HELLO` environment variable yet. We'll configure that in the next section.
