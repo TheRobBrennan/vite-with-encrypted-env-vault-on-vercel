@@ -71,3 +71,21 @@ Auto-detected Project Settings (Vite):
 After successfully deploying to Vercel, my project is available at [https://vite-with-encrypted-env-vault-on-vercel.vercel.app](https://vite-with-encrypted-env-vault-on-vercel.vercel.app).
 
 Once your app is deployed to Vercel, it will say `Hello, undefined.` because it doesn't have access to the `VITE_HELLO` environment variable yet. We'll configure that in the next section.
+
+### Environment variables
+
+First, let's define our environment variables. As part of standard programming practice, it's helpful if your project has a `.env.example` file to help get users started and understand what environment variables and other services or integrations need to be defined for your application to work.
+
+Please copy `.env.sample` to `.env`:
+
+```sh
+% cp .env.sample .env
+```
+
+Next, install `dotenv` so that our environment variables from `.env` are injected into our Vite application:
+
+```sh
+% npm install dotenv --save # Requires dotenv >= 16.1.0
+```
+
+If we run our development server with `npm run dev` we should see our "Hello World." message at [http://localhost:5173](http://localhost:5173) 🎉
