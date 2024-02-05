@@ -21,3 +21,20 @@ Done. Now run:
   npm run dev
 
 ```
+
+After we have run the `npm install` command, let's run `npm run dev` to view our application:
+
+```sh
+# Install our dependencies
+% npm install
+
+# Start our development server
+% npm run dev
+VITE v5.0.12  ready in 134 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+```
+
+In the above example, we should be able to open our favorite web browser and navigate to [http://localhost:5173](http://localhost:5173) 🎉
