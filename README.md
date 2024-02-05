@@ -89,3 +89,77 @@ Next, install `dotenv` so that our environment variables from `.env` are injecte
 ```
 
 If we run our development server with `npm run dev` we should see our "Hello World." message at [http://localhost:5173](http://localhost:5173) 🎉
+
+#### Build .env.vault
+
+If this is your first time setting up a `dotenv-vault`, please follow these instructions:
+
+```sh
+# Create a new .env.vault
+% npx dotenv-vault@latest new
+
+# Follow the prompts to create a new vault/account
+
+# Confirm your dotnet-vault account by clicking on the verification link that was emailed to you
+
+# Login to dotenv-vault
+% npx dotenv-vault@latest login
+
+# Open dotenv-vault
+% npx dotenv-vault@latest open
+
+```
+
+Once you have a vault created for `dotnet-vault` you will want to push your `.env` file so that those changes are automatically pushed to the vault.
+
+```sh
+# Push your latest .env file changes
+% npx dotenv-vault@latest push
+
+# OPTIONAL: Open and edit your production vault
+% npx dotenv-vault@latest open production
+
+```
+
+Update `VITE_HELLO` in production so it has a value of "production" (without quotes).
+
+Build your `.env.vault` file - which **CAN AND SHOULD BE COMMITTED TO SOURCE CONTROL**:
+
+```sh
+% npx dotenv-vault@latest build
+
+remote:   Securely building .env.vault... done
+remote:   Securely built .env.vault
+
+Next:
+1. Commit .env.vault to code
+2. Set DOTENV_KEY on server
+3. Deploy your code
+
+(run npx dotenv-vault@latest keys to view DOTENV_KEYs)
+
+```
+
+#### Configure Vercel to use your dotnet-vault
+
+The last step will be in obtaining your production `DOTENV_KEY` from your `dotenv-vault` and add that to Vercel as a new `DOTENV_KEY` environment variable for deployment:
+
+```sh
+# Fetch your production DOTENV_KEY
+% npx dotenv-vault@latest keys production
+remote:   Listing .env.vault decryption keys... done
+dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
+
+# Set DOTENV_KEY on Vercel using the CLI
+% npx vercel@latest env add DOTENV_KEY
+Vercel CLI 33.4.1
+? What’s the value of DOTENV_KEY? dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
+? Add DOTENV_KEY to which Environments (select multiple)? Production, Preview, Development
+✅  Added Environment Variable DOTENV_KEY to Project vite-with-encrypted-env-vault-on-vercel [229ms]
+
+# Build and deploy to Vercel using the latest production secrets
+% npx vercel@latest deploy --prod
+
+```
+
+¡Voila! All the environment variables this application uses can be managed and maintained in the `dotenv-vault`, with Vercel only needing to be aware of the `DOTENV_KEY` environment variable.
