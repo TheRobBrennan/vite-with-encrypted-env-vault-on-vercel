@@ -2,6 +2,8 @@
 
 Let's deploy a Vite app with an encrypted `.env.vault` file to Vercel as suggested by [Deploy a Vite App to Vercel](https://www.dotenv.org/docs/frameworks/vite/vercel)
 
+The [demo](https://vite-with-encrypted-env-vault-on-vercel.vercel.app) for this repo can be viewed at [https://vite-with-encrypted-env-vault-on-vercel.vercel.app](https://vite-with-encrypted-env-vault-on-vercel.vercel.app).
+
 ## Getting started
 
 ### Initial setup
