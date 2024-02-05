@@ -80,12 +80,12 @@ Please copy `.env.sample` to `.env`:
 
 ```sh
 % cp .env.sample .env
-
 ```
 
 Next, install `dotenv` so that our environment variables from `.env` are injected into our Vite application:
 
 ```sh
 % npm install dotenv --save # Requires dotenv >= 16.1.0
-
 ```
+
+If we run our development server with `npm run dev` we should see our "Hello World." message at [http://localhost:5173](http://localhost:5173) 🎉
