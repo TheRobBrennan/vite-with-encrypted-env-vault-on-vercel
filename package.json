@@ -1,6 +1,7 @@
 {
   "name": "vite-with-encrypted-env-vault-on-vercel",
   "author": "Rob Brennan <rob@therobbrennan.com>",
+  "description": "Deploy Vite app with an encrypted .env.vault file to Vercel",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
