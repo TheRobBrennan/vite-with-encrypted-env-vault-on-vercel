@@ -27,4 +27,6 @@ dist-ssr
 # Environment variables
 .env*
 !.env.sample
-.env.vault
+.flaskenv*
+!.env.project
+!.env.vault
